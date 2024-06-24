@@ -18,6 +18,9 @@ public class GameFrame extends MyFrame{
 			if(GameWorld.enemies.size()==0) {
 				setColor(0,0,0);
 				drawString("クリア!",100,200,40);
+			}else if(GameWorld.player.y<0) {
+				setColor(0,0,0);
+				drawString("ゲームオーバー!",50,200,40);
 			}
 			sleep(0.03);
 		}
@@ -91,7 +94,7 @@ public class GameFrame extends MyFrame{
 	}
 	
 	public boolean checkHit(Character a,Character b) {
-		return Math.abs(a.x-b.x)<=30 && Math.abs(a.y-b.y)<=30;
+		return Math.abs(a.x-b.x)<=20 && Math.abs(a.y-b.y)<=20;
 	}
 
 }
