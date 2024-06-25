@@ -85,10 +85,11 @@ public class GameFrame extends MyFrame{
 	
 	public void checkPlayerBulletsAndEnemies() {
 		int i=0;
-		int hits=0;
+		
 		while(i<GameWorld.playerBullets.size()) {
 			PlayerBullet b=GameWorld.playerBullets.get(i);
 			int j=0;
+			int hits=0;
 			while(j<GameWorld.enemies.size()) {
 				Enemy e=GameWorld.enemies.get(j);
 				if(checkHit(e,b)) {
