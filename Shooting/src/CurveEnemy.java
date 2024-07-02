@@ -2,7 +2,7 @@
 public class CurveEnemy extends Enemy{
 	public CurveEnemy(double x,double y,double vx,double vy) {
 		super(x,y,vx,vy);
-		life=3;
+		life=3+GameWorld.stage;
 	}
 	public void draw(MyFrame f) {
 		f.setColor(0,0,0);
@@ -13,10 +13,10 @@ public class CurveEnemy extends Enemy{
 	public void move() {
 		super.move();
 		if(x<GameWorld.player.x) {
-			x++;
+			x+=GameWorld.stage;
 		}
 		if(x>GameWorld.player.x) {
-			x--;
+			x-=GameWorld.stage;
 		}
 	}
 
